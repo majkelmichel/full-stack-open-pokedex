@@ -15,6 +15,10 @@ jobs:
           node-version: '12.x'
       - name: npm install
         run: npm install
+#      - name: npm run build
+#        run: npm run build
+#      - name: show directory
+#        run: ls -a
       - name: lint
         run: npm run eslint
       - name: test
@@ -22,6 +26,7 @@ jobs:
       - name: e2e tests
         uses: cypress-io/github-action@v2
         with:
+          build: npm run build
           command: npm run test:e2e
           start: npm run start-prod
-          wait-on: http://localhost:5000
+          wait-on: 'http://localhost:5000'
