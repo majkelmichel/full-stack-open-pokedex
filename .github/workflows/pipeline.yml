@@ -37,3 +37,4 @@ jobs:
           heroku_email: "mich.zaw2002@gmail.com"
           healthcheck: "https://fso-pokedex-majkel.herokuapp.com/health"
           checkstring: "ok"
+          rollbackonhealthcheckfailed: true
