@@ -25,3 +25,4 @@ jobs:
       - name: commit messages joindd
         env:
           CMTS: ${{ join(toJson(github.event.commits.*.message)) }}
+        run: echo "$CMTS"
