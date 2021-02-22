@@ -47,4 +47,4 @@ jobs:
         uses: anothrNick/github-tag-action@1.33.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        if: ${{ github.event_name == 'push' }}
+        if: ${{ github.event_name == 'push' }} && {{ !contains(join(toJson(github.event.commits.*.message)), '#skip' }}
