@@ -2,7 +2,7 @@ name: Periodic Health Check
 
 on:
   schedule:
-    - cron: '*/5 * * * *'
+    - cron: '* * */3 * *'
   push:
     branches:
       - master
@@ -16,3 +16,4 @@ jobs:
         with:
           url: https://fso-pokedex-majkel.herokuapp.com/health
           max-attempts: 3
+          retry-delay: 30s
